@@ -1,0 +1,34 @@
+name: Generate meetup data
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'Northern-Rivers-Bitcoin-Meetups.md'
+      - 'generate-meetups.py'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Generate meetup source
+        run: python generate-meetups.py
+      - name: Commit generated data
+        run: |
+          if git diff --quiet -- meetups-source.html; then
+            echo "No generated changes"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add meetups-source.html
+          git commit -m "Update generated meetup data"
+          git push
