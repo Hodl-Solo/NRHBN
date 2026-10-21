@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Find Bitcoin meetups across the Northern Rivers of New South Wales — Byron Bay, Alstonville, Murwillumbah, Mullumbimby and more.">
+  <meta property="og:title" content="Northern Rivers Honey Badger Network">
+  <meta property="og:description" content="Bitcoin meetups and community across the Northern Rivers, NSW.">
+  <meta property="og:type" content="website">
+  <title>Northern Rivers Honey Badger Network</title>
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="map.css">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="#top" aria-label="Northern Rivers Honey Badger Network home">
+        <span class="brand-mark">₿</span>
+        <span class="brand-copy"><strong>Honey Badger</strong><small>Northern Rivers Network</small></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
+        <a href="#meetups">Meetups</a>
+        <a href="#map">Map</a>
+        <a href="#about">About</a>
+        <a class="nav-cta" href="#start">Start a meetup</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="hero-terrain" aria-hidden="true"></div>
+      <div class="section-shell hero-layout">
+        <div class="hero-copy-block">
+          <p class="eyebrow">Northern Rivers · New South Wales</p>
+          <h1>Find your local<br><span>Bitcoin people.</span></h1>
+          <p class="hero-copy">Independent Bitcoin meetups from the coast to the hinterland. Learn, build, trade, ask questions and meet the people growing Bitcoin in the Northern Rivers.</p>
+          <div class="hero-actions">
+            <a class="button-orange" href="#meetups">Explore meetups</a>
+            <a class="button-ghost" href="#map">View the map</a>
+          </div>
+          <div class="hero-meta" aria-label="Network statistics">
+            <div><strong id="hero-count">—</strong><span>meetups</span></div>
+            <div><strong id="town-count">—</strong><span>towns</span></div>
+            <div><strong>₿</strong><span>Bitcoin only</span></div>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="Network overview">
+          <span class="hero-card-kicker">The network</span>
+          <div class="badger-mark" aria-hidden="true">
+            <span class="badger-b">₿</span>
+          </div>
+          <h2>Northern Rivers<br>Honey Badger Network</h2>
+          <p>Local groups. Shared signal. No central gatekeeper.</p>
+          <div class="hero-card-line"></div>
+          <small>Byron Bay · Alstonville · Murwillumbah · Mullumbimby</small>
+        </aside>
+      </div>
+    </section>
+
+    <section class="network-strip">
+      <div class="section-shell strip-inner">
+        <span>Community-led</span><i></i><span>Bitcoin only</span><i></i><span>Beginner friendly</span><i></i><span>Technical meetups</span><i></i><span>Northern Rivers</span>
+      </div>
+    </section>
+
+    <section class="directory-section" id="meetups">
+      <div class="section-shell">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Across the region</p>
+            <h2>Six groups.<br>One local network.</h2>
+          </div>
+          <p>Each meetup has its own character. Some are social and beginner-friendly, some are technical, and some are focused on creating more space for women in Bitcoin.</p>
+        </div>
+
+        <div class="directory-tools">
+          <div class="search-wrap">
+            <label class="sr-only" for="directory-search">Search meetups</label>
+            <input id="directory-search" type="search" placeholder="Search Byron Bay, Mullumbimby, BitDevs…" autocomplete="off">
+          </div>
+          <div class="filter-row" id="type-filters" aria-label="Filter meetups by type">
+            <button type="button" class="filter active" data-type="all">All</button>
+            <button type="button" class="filter" data-type="General">General</button>
+            <button type="button" class="filter" data-type="Community">Community</button>
+            <button type="button" class="filter" data-type="Technical">Technical</button>
+            <button type="button" class="filter" data-type="Coming Soon">Coming soon</button>
+          </div>
+        </div>
+
+        <div class="results-line">
+          <span id="results-count">Loading meetups…</span>
+          <button id="clear-search" type="button" hidden>Clear filters</button>
+        </div>
+
+        <div class="meetup-grid" id="meetup-grid" aria-live="polite"></div>
+
+        <div class="empty-state" id="empty-state" hidden>
+          <h3>No meetup found.</h3>
+          <p>Try another town or remove the current filter.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="map-section" id="map">
+      <div class="section-shell map-layout">
+        <div class="map-copy">
+          <p class="eyebrow">The Northern Rivers</p>
+          <h2>Closer than<br>you think.</h2>
+          <p>From Murwillumbah down through Mullumbimby and Byron Bay to Alstonville, the network is deliberately local. Pick the group that suits you—or visit them all.</p>
+          <div class="map-key-copy">
+            <span><i class="key-dot active"></i>Active</span>
+            <span><i class="key-dot soon"></i>Coming soon</span>
+          </div>
+        </div>
+        <div class="map-frame">
+          <div id="meetup-map" role="region" aria-label="Map of Northern Rivers Bitcoin meetups"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section" id="about">
+      <div class="section-shell about-grid">
+        <div>
+          <p class="eyebrow dark">Why a network?</p>
+          <h2>Local first.<br>Connected by Bitcoin.</h2>
+        </div>
+        <div class="about-copy">
+          <p>The Northern Rivers already has several independent Bitcoin communities. The Honey Badger Network gives them a shared front door without turning them into one central organisation.</p>
+          <p>Meetups stay independent. The network simply makes it easier to discover what is happening nearby, share events and help new groups get started.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="start-section" id="start">
+      <div class="section-shell start-card">
+        <div>
+          <p class="eyebrow">Grow the map</p>
+          <h2>Want to start a meetup?</h2>
+          <p>If your town is missing, start small. A table, a few Bitcoiners and a regular date is enough. The network can help people find you.</p>
+        </div>
+        <a class="button-orange" href="mailto:hello@example.com?subject=Northern%20Rivers%20Bitcoin%20Meetup">Start a conversation →</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="section-shell footer-layout">
+      <div class="footer-brand">
+        <span class="brand-mark">₿</span>
+        <div><strong>Northern Rivers Honey Badger Network</strong><small>Bitcoin community across the Northern Rivers, NSW.</small></div>
+      </div>
+      <div class="footer-links">
+        <a href="#meetups">Meetups</a>
+        <a href="#map">Map</a>
+        <a href="#about">About</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
