@@ -3,7 +3,7 @@ const $$=(s,r=document)=>[...r.querySelectorAll(s)];
 let meetups=[],activeType='all',query='',mapInstance=null;
 
 function escapeHtml(v=''){
-  return String(v).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt',"'":'&#39;','"':'&quot;'}[c]));
+  return String(v).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
 }
 function escapeAttr(v=''){return escapeHtml(v);}
 
