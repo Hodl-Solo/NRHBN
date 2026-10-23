@@ -1,0 +1,20 @@
+/* Header logo alignment and cleanup */
+.site-header .brand{
+  background:none !important;
+  width:auto !important;
+  height:auto !important;
+  flex:0 1 auto;
+  overflow:visible;
+}
+
+@media (min-width:761px){
+  .site-header .brand img{
+    transform:translateX(-44px);
+  }
+}
+
+@media (max-width:760px){
+  .site-header .brand img{
+    transform:none;
+  }
+}
