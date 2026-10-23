@@ -7,14 +7,14 @@
   overflow:visible;
 }
 
-@media (min-width:761px){
-  .site-header .brand img{
-    transform:translateX(-44px);
-  }
+.site-header .brand img{
+  transform:none;
 }
 
 @media (max-width:760px){
   .site-header .brand img{
-    transform:none;
+    height:52px !important;
+    width:auto !important;
+    max-width:68vw !important;
   }
 }
