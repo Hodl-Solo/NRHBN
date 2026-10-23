@@ -3,7 +3,7 @@ const $$=(s,r=document)=>[...r.querySelectorAll(s)];
 let meetups=[],activeType='all',query='',mapInstance=null;
 
 function escapeHtml(v=''){
-  return String(v).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]));
+  return String(v).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt',"'":'&#39;','"':'&quot;'}[c]));
 }
 function escapeAttr(v=''){return escapeHtml(v);}
 
@@ -100,10 +100,10 @@ function renderMap(){
     const point=[m.lat+latOffset,m.lon+lonOffset];
     const marker=L.circleMarker(point,{
       radius:coming?8:7,
-      color:'#f7931a',
+      color:coming?'#139DF2':'#F25D07',
       weight:coming?3:2,
       dashArray:coming?'4 4':null,
-      fillColor:coming?'#142018':'#f7931a',
+      fillColor:coming?'#051F40':'#F27405',
       fillOpacity:coming?.35:.94
     }).addTo(mapInstance);
     marker.bindPopup(mapPopup(m),{maxWidth:300});
