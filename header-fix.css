@@ -1,34 +1,14 @@
-/* Header logo assembled from verified PNG slices */
+/* NRHBN header logo */
 .site-header .brand{
   display:block !important;
-  width:158px !important;
-  height:70px !important;
-  flex:0 0 158px;
+  width:185px !important;
+  height:79px !important;
+  flex:0 0 185px;
   overflow:visible;
-  background-image:
-    url("assets/logo/slice-1.png"),
-    url("assets/logo/slice-2.png"),
-    url("assets/logo/slice-3.png"),
-    url("assets/logo/slice-4.png"),
-    url("assets/logo/slice-5.png"),
-    url("assets/logo/slice-6.png"),
-    url("assets/logo/slice-7.png"),
-    url("assets/logo/slice-8.png"),
-    url("assets/logo/slice-9.png"),
-    url("assets/logo/slice-10.png") !important;
+  background-image:url("assets/nrhbn-header-v2.svg") !important;
   background-repeat:no-repeat !important;
-  background-size:10% 100% !important;
-  background-position:
-    0% 0,
-    11.111% 0,
-    22.222% 0,
-    33.333% 0,
-    44.444% 0,
-    55.556% 0,
-    66.667% 0,
-    77.778% 0,
-    88.889% 0,
-    100% 0 !important;
+  background-position:left center !important;
+  background-size:contain !important;
 }
 
 .site-header .brand-logo{
@@ -37,8 +17,8 @@
 
 @media (max-width:760px){
   .site-header .brand{
-    width:126px !important;
-    height:56px !important;
-    flex-basis:126px;
+    width:140px !important;
+    height:60px !important;
+    flex-basis:140px;
   }
 }
