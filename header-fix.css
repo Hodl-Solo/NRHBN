@@ -1,20 +1,24 @@
-/* Header logo alignment and cleanup */
+/* Header logo: use the real transparent PNG asset and ignore the old inline image */
 .site-header .brand{
-  background:none !important;
-  width:auto !important;
-  height:auto !important;
-  flex:0 1 auto;
+  display:block !important;
+  width:min(520px,52vw) !important;
+  height:70px !important;
+  flex:0 1 520px;
   overflow:visible;
+  background-image:url("assets/nrhbn-header.png") !important;
+  background-repeat:no-repeat !important;
+  background-position:left center !important;
+  background-size:contain !important;
 }
 
 .site-header .brand img{
-  transform:none;
+  display:none !important;
 }
 
 @media (max-width:760px){
-  .site-header .brand img{
-    height:52px !important;
-    width:auto !important;
-    max-width:68vw !important;
+  .site-header .brand{
+    width:min(280px,65vw) !important;
+    height:56px !important;
+    flex-basis:auto;
   }
 }
