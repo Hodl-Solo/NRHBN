@@ -1,25 +1,44 @@
-/* Header logo */
+/* Header logo assembled from verified PNG slices */
 .site-header .brand{
-  display:flex !important;
-  align-items:center;
-  width:auto !important;
-  height:auto !important;
-  flex:0 1 auto;
+  display:block !important;
+  width:158px !important;
+  height:70px !important;
+  flex:0 0 158px;
   overflow:visible;
-  background:none !important;
+  background-image:
+    url("assets/logo/slice-1.png"),
+    url("assets/logo/slice-2.png"),
+    url("assets/logo/slice-3.png"),
+    url("assets/logo/slice-4.png"),
+    url("assets/logo/slice-5.png"),
+    url("assets/logo/slice-6.png"),
+    url("assets/logo/slice-7.png"),
+    url("assets/logo/slice-8.png"),
+    url("assets/logo/slice-9.png"),
+    url("assets/logo/slice-10.png") !important;
+  background-repeat:no-repeat !important;
+  background-size:10% 100% !important;
+  background-position:
+    0% 0,
+    11.111% 0,
+    22.222% 0,
+    33.333% 0,
+    44.444% 0,
+    55.556% 0,
+    66.667% 0,
+    77.778% 0,
+    88.889% 0,
+    100% 0 !important;
 }
 
 .site-header .brand-logo{
-  display:block !important;
-  width:min(520px,52vw);
-  height:auto;
-  max-height:70px;
-  object-fit:contain;
+  display:none !important;
 }
 
 @media (max-width:760px){
-  .site-header .brand-logo{
-    width:min(280px,65vw);
-    max-height:56px;
+  .site-header .brand{
+    width:126px !important;
+    height:56px !important;
+    flex-basis:126px;
   }
 }
