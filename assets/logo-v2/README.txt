@@ -1,0 +1,1 @@
+NRHBN header logo slices for the second side-on honey badger artwork.
